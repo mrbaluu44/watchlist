@@ -28,4 +28,25 @@ export class MovieListComponent {
         this.movies = this.movies.filter(movie => movie.id !== id);
     }
 
+    addMovie(movie: Movie) {
+      this.movies.push(movie);
+    }
+
+    getMoviesByGenre(genre: string) {
+      return this.movies.filter(movie => movie.genre === genre);
+
+    }
+
+    getMovieById(id: number) {
+      return this.movies.find(movie => movie.id === id);
+    }
+
+    getMoviesByMinRating(minRating: number) {
+      return this.movies.filter(movie =>
+    movie.rating !== undefined && movie.rating >= minRating
+  );
+    }
+
+  
+
 }

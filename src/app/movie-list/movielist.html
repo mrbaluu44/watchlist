@@ -1,0 +1,13 @@
+<h2>Meine Watchlist</h2>
+
+@for (movie of movies; track movie.id) {
+  <p>
+    Titel: {{ movie.title }} <br>
+    Genre: {{ movie.genre }} <br>
+    @if (movie.rating) {
+        Rating: {{ movie.rating }}
+    }
+    
+  </p>
+  <button (click)="deleteMovie(movie.id)">Delete</button>
+}

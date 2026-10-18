@@ -11,3 +11,23 @@
   </p>
   <button (click)="deleteMovie(movie.id)">Delete</button>
 }
+
+<form>
+  <input
+    type="text"
+    [(ngModel)]="newTitle"
+    name="title"
+    placeholder="Titel">
+
+  <input
+    type="text"
+    [(ngModel)]="newGenre"
+    name="genre"
+    placeholder="Genre">
+
+  <input
+    type="number"
+    [(ngModel)]="newRating"
+    name="rating"
+    placeholder="Rating">
+</form>

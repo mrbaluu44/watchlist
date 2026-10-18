@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { Movie } from '../models/movie';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-    imports: [],
+    imports: [FormsModule],
     selector: 'app-movie-list',
     styleUrl: './movielist.css',
     templateUrl: './movielist.html',
 })
 
 export class MovieListComponent {
+
+    newTitle = '';
+    newGenre = '';
+    newRating?: number;
 
     movies: Movie[] = [
   {

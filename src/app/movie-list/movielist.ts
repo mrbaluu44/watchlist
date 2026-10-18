@@ -29,6 +29,23 @@ export class MovieListComponent {
   }
 ];
 
+    createMovie() {
+
+      if (this.newTitle && this.newGenre && this.newRating !== undefined) {
+        const newMovie: Movie = {
+          id: this.movies.length + 1,
+          title: this.newTitle,
+          genre: this.newGenre,
+          rating: this.newRating
+        };
+        this.addMovie(newMovie);
+        this.newTitle = '';
+        this.newGenre = '';
+        this.newRating = undefined;
+      }
+
+    }
+ 
     deleteMovie(id: number) {
         this.movies = this.movies.filter(movie => movie.id !== id);
     }
